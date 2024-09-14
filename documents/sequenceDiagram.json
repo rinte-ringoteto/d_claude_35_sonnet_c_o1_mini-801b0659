@@ -1,0 +1,37 @@
+{
+  "key": "sequenceDiagram",
+  "value": [
+    {
+      "id": "ファイル入力",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: テキストファイルまたはPDFファイルを選択\\n    Frontend->>Backend: ファイルをアップロード\\n    Backend->>DB: ファイル情報を保存\\n    DB-->>Backend: 保存完了\\n    Backend->>Backend: ファイル内容を解析\\n    Backend-->>Frontend: アップロード完了メッセージ\\n    Frontend-->>User: アップロード完了メッセージを表示\"}"
+    },
+    {
+      "id": "ドキュメント生成",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: ファイルをアップロード\\n    Frontend->>Backend: ファイルを送信\\n    Backend->>DB: ファイル情報を保存\\n    DB->>Backend: 保存完了\\n    Backend->>Backend: ドキュメント生成処理\\n    Backend->>DB: 生成されたドキュメントを保存\\n    DB->>Backend: 保存完了\\n    Backend->>Frontend: 生成完了通知\\n    Frontend->>User: ドキュメント生成完了を表示\\n    User->>Frontend: ドキュメント表示要求\\n    Frontend->>Backend: ドキュメント取得要求\\n    Backend->>DB: ドキュメントデータ取得\\n    DB->>Backend: ドキュメントデータ返却\\n    Backend->>Frontend: ドキュメントデータ送信\\n    Frontend->>User: ドキュメントを表示\"}"
+    },
+    {
+      "id": "コード生成",
+      "value": "{\n\"mermaid\": \"sequenceDiagram\\n    User->>Frontend: アップロードファイル選択\\n    Frontend->>Backend: ファイル送信\\n    Backend->>DB: ファイル保存\\n    DB-->>Backend: 保存完了\\n    Backend->>Backend: 開発ドキュメント生成\\n    Backend->>DB: ドキュメント保存\\n    DB-->>Backend: 保存完了\\n    Backend->>Backend: ソースコード生成\\n    Backend->>DB: コード保存\\n    DB-->>Backend: 保存完了\\n    Backend-->>Frontend: 生成結果送信\\n    Frontend-->>User: 生成結果表示\\n    User->>Frontend: 品質チェック要求\\n    Frontend->>Backend: チェック要求送信\\n    Backend->>Backend: 自動品質チェック実行\\n    Backend-->>Frontend: チェック結果送信\\n    Frontend-->>User: チェック結果表示\"\n}"
+    },
+    {
+      "id": "結果表示",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: 生成結果の表示リクエスト\\n    Frontend->>Backend: 生成結果取得APIリクエスト\\n    Backend->>DB: 生成結果データ取得\\n    DB-->>Backend: 生成結果データ返却\\n    Backend-->>Frontend: 生成結果データ返却\\n    Frontend->>Frontend: 生成結果のフォーマット処理\\n    Frontend-->>User: 生成されたドキュメントとソースコードを表示\\n    User->>Frontend: 表示内容の確認\\n    Frontend->>Backend: 表示ログ記録APIリクエスト\\n    Backend->>DB: 表示ログデータ保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: ログ記録完了通知\\n    Frontend-->>User: 表示完了通知\"}"
+    },
+    {
+      "id": "品質管理",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: ドキュメント/ソースコードをアップロード\\n    Frontend->>Backend: アップロードされたファイルを送信\\n    Backend->>DB: ファイル情報を保存\\n    Backend->>Backend: 自動品質チェック実行\\n    Backend->>DB: チェック結果を保存\\n    Backend->>Frontend: チェック結果を送信\\n    Frontend->>User: 品質チェック結果を表示\\n    User->>Frontend: ドキュメント整合性チェックを要求\\n    Frontend->>Backend: 整合性チェックを要求\\n    Backend->>DB: 各工程のドキュメントを取得\\n    Backend->>Backend: ドキュメント整合性チェック実行\\n    Backend->>DB: チェック結果を保存\\n    Backend->>Frontend: 整合性チェック結果を送信\\n    Frontend->>User: 整合性チェック結果を表示\"}"
+    },
+    {
+      "id": "資料作成",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    autonumber\\n    User->>Frontend: 生成されたドキュメントを選択\\n    Frontend->>Backend: ドキュメント取得リクエスト\\n    Backend->>DB: ドキュメントデータ取得\\n    DB-->>Backend: ドキュメントデータ返却\\n    Backend->>Backend: 提案資料生成処理\\n    Backend-->>Frontend: 生成された提案資料\\n    Frontend-->>User: 提案資料表示\\n    User->>Frontend: 提案資料の編集・確認\\n    Frontend->>Backend: 編集内容保存リクエスト\\n    Backend->>DB: 編集内容保存\\n    DB-->>Backend: 保存完了通知\\n    Backend-->>Frontend: 保存完了通知\\n    Frontend-->>User: 保存完了メッセージ表示\"}"
+    },
+    {
+      "id": "プロジェクト管理",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: 開発ドキュメントとソースコードをアップロード\\n    Frontend->>Backend: ドキュメントとコードを送信\\n    Backend->>DB: プロジェクト情報を保存\\n    Backend->>Backend: 工数見積の計算\\n    Backend->>DB: 工数見積結果を保存\\n    Backend->>Frontend: 工数見積レポートを送信\\n    Frontend->>User: 工数見積レポートを表示\"}"
+    },
+    {
+      "id": "レポーティング",
+      "value": "{\"mermaid\":\"sequenceDiagram\\n    User->>Frontend: 進捗状況データを入力\\n    Frontend->>Backend: データを送信\\n    Backend->>DB: 進捗データを保存\\n    Backend->>Backend: 進捗状況を分析\\n    Backend->>Backend: レポートを生成\\n    Backend->>DB: 生成したレポートを保存\\n    Backend->>Frontend: レポートを送信\\n    Frontend->>User: 進捗状況レポートを表示\"}"
+    }
+  ]
+}

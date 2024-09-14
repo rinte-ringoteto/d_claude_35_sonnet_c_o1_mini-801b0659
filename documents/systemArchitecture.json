@@ -1,0 +1,6 @@
+{
+  "key": "systemArchitecture",
+  "value": {
+    "mermaid": "graph TD\n    subgraph フロントエンド\n    U1[新規事業企画部門] --> UI[ユーザーインターフェース]\n    U2[開発部門] --> UI\n    U3[営業部門] --> UI\n    UI --> F1[ファイルアップロード]\n    UI --> F2[ドキュメント/コード表示]\n    UI --> F3[結果ダウンロード]\n    end\n\n    subgraph バックエンド\n    API[APIサーバー]\n    DG[ドキュメント生成エンジン]\n    CG[コード生成エンジン]\n    QC[品質チェックエンジン]\n    PM[プロジェクト管理エンジン]\n    end\n\n    subgraph データベース\n    DB1[(ドキュメントDB)]\n    DB2[(コードDB)]\n    DB3[(プロジェクト管理DB)]\n    end\n\n    subgraph 外部サービス\n    AI[AI言語モデル]\n    end\n\n    F1 --> API\n    F2 --> API\n    F3 --> API\n\n    API --> DG\n    API --> CG\n    API --> QC\n    API --> PM\n\n    DG --> DB1\n    CG --> DB2\n    PM --> DB3\n\n    DG --> AI\n    CG --> AI\n    QC --> AI"
+  }
+}

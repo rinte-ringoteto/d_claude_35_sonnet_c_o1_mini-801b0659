@@ -1,0 +1,355 @@
+{
+  "key": "tableDefinition",
+  "value": [
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "ユーザーの一意識別子",
+      "id": "TAB-001",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "UNIQUE NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(255)",
+      "column": "email",
+      "description": "ユーザーのメールアドレス",
+      "id": "TAB-002",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(255)",
+      "column": "password_hash",
+      "description": "ハッシュ化されたパスワード",
+      "id": "TAB-003",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "'user'",
+      "dataType": "varchar(50)",
+      "column": "role",
+      "description": "ユーザーの役割（新規事業企画部門 開発部門 営業部門）",
+      "id": "TAB-004",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "ユーザーアカウント作成日時",
+      "id": "TAB-005",
+      "foreignKey": "",
+      "table": "users"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "プロジェクトの一意識別子",
+      "id": "TAB-006",
+      "foreignKey": "",
+      "table": "projects"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(255)",
+      "column": "name",
+      "description": "プロジェクト名",
+      "id": "TAB-007",
+      "foreignKey": "",
+      "table": "projects"
+    },
+    {
+      "regulation": "",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "description",
+      "description": "プロジェクトの説明",
+      "id": "TAB-008",
+      "foreignKey": "",
+      "table": "projects"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "created_by",
+      "description": "プロジェクト作成者のID",
+      "id": "TAB-009",
+      "foreignKey": "REFERENCES users(id)",
+      "table": "projects"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "プロジェクト作成日時",
+      "id": "TAB-010",
+      "foreignKey": "",
+      "table": "projects"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "ドキュメントの一意識別子",
+      "id": "TAB-011",
+      "foreignKey": "",
+      "table": "documents"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "project_id",
+      "description": "関連するプロジェクトのID",
+      "id": "TAB-012",
+      "foreignKey": "REFERENCES projects(id)",
+      "table": "documents"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(50)",
+      "column": "type",
+      "description": "ドキュメントの種類（要件定義 システム設計 開発 テスト 提案資料）",
+      "id": "TAB-013",
+      "foreignKey": "",
+      "table": "documents"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"title\": \"\" \"sections\": [{\"heading\": \"\" \"content\": \"\"}]}",
+      "dataType": "jsonb",
+      "column": "content",
+      "description": "ドキュメントの内容（JSON形式）",
+      "id": "TAB-014",
+      "foreignKey": "",
+      "table": "documents"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "ドキュメント作成日時",
+      "id": "TAB-015",
+      "foreignKey": "",
+      "table": "documents"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "ドキュメント更新日時",
+      "id": "TAB-016",
+      "foreignKey": "",
+      "table": "documents"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "ソースコードの一意識別子",
+      "id": "TAB-017",
+      "foreignKey": "",
+      "table": "source_codes"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "project_id",
+      "description": "関連するプロジェクトのID",
+      "id": "TAB-018",
+      "foreignKey": "REFERENCES projects(id)",
+      "table": "source_codes"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(255)",
+      "column": "file_name",
+      "description": "ソースコードのファイル名",
+      "id": "TAB-019",
+      "foreignKey": "",
+      "table": "source_codes"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "text",
+      "column": "content",
+      "description": "ソースコードの内容",
+      "id": "TAB-020",
+      "foreignKey": "",
+      "table": "source_codes"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "ソースコード作成日時",
+      "id": "TAB-021",
+      "foreignKey": "",
+      "table": "source_codes"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "updated_at",
+      "description": "ソースコード更新日時",
+      "id": "TAB-022",
+      "foreignKey": "",
+      "table": "source_codes"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "品質チェックの一意識別子",
+      "id": "TAB-023",
+      "foreignKey": "",
+      "table": "quality_checks"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "project_id",
+      "description": "関連するプロジェクトのID",
+      "id": "TAB-024",
+      "foreignKey": "REFERENCES projects(id)",
+      "table": "quality_checks"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "varchar(50)",
+      "column": "type",
+      "description": "チェックの種類（ドキュメント ソースコード 整合性）",
+      "id": "TAB-025",
+      "foreignKey": "",
+      "table": "quality_checks"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"score\": 0 \"issues\": [{\"type\": \"\" \"description\": \"\" \"severity\": \"\"}]}",
+      "dataType": "jsonb",
+      "column": "result",
+      "description": "チェック結果（JSON形式）",
+      "id": "TAB-026",
+      "foreignKey": "",
+      "table": "quality_checks"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "品質チェック実施日時",
+      "id": "TAB-027",
+      "foreignKey": "",
+      "table": "quality_checks"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "工数見積の一意識別子",
+      "id": "TAB-028",
+      "foreignKey": "",
+      "table": "work_estimates"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "project_id",
+      "description": "関連するプロジェクトのID",
+      "id": "TAB-029",
+      "foreignKey": "REFERENCES projects(id)",
+      "table": "work_estimates"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"total_hours\": 0 \"breakdown\": [{\"phase\": \"\" \"hours\": 0}]}",
+      "dataType": "jsonb",
+      "column": "estimate",
+      "description": "工数見積結果（JSON形式）",
+      "id": "TAB-030",
+      "foreignKey": "",
+      "table": "work_estimates"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "工数見積作成日時",
+      "id": "TAB-031",
+      "foreignKey": "",
+      "table": "work_estimates"
+    },
+    {
+      "regulation": "PRIMARY KEY",
+      "defaultValue": "gen_random_uuid()",
+      "dataType": "uuid",
+      "column": "id",
+      "description": "進捗レポートの一意識別子",
+      "id": "TAB-032",
+      "foreignKey": "",
+      "table": "progress_reports"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "",
+      "dataType": "uuid",
+      "column": "project_id",
+      "description": "関連するプロジェクトのID",
+      "id": "TAB-033",
+      "foreignKey": "REFERENCES projects(id)",
+      "table": "progress_reports"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "{\"overall_progress\": 0 \"phases\": [{\"name\": \"\" \"progress\": 0 \"status\": \"\"}]}",
+      "dataType": "jsonb",
+      "column": "report",
+      "description": "進捗レポートの内容（JSON形式）",
+      "id": "TAB-034",
+      "foreignKey": "",
+      "table": "progress_reports"
+    },
+    {
+      "regulation": "NOT NULL",
+      "defaultValue": "CURRENT_TIMESTAMP",
+      "dataType": "timestamp with time zone",
+      "column": "created_at",
+      "description": "進捗レポート作成日時",
+      "id": "TAB-035",
+      "foreignKey": "",
+      "table": "progress_reports"
+    }
+  ]
+}

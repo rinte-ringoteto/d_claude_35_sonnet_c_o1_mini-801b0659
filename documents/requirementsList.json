@@ -1,0 +1,75 @@
+{
+  "key": "requirementsList",
+  "value": [
+    {
+      "requirement_name": "テキスト/PDF入力",
+      "description": "ユーザーがテキストファイルまたはPDFファイルをシステムにアップロードできること",
+      "id": "REQ-001",
+      "category": "入力",
+      "user": "新規事業企画部門 開発部門 営業部門"
+    },
+    {
+      "requirement_name": "ドキュメント自動生成",
+      "description": "アップロードされたファイルの内容を分析し 開発ドキュメントを自動生成すること",
+      "id": "REQ-002",
+      "category": "処理",
+      "user": "新規事業企画部門 開発部門"
+    },
+    {
+      "requirement_name": "ソースコード自動生成",
+      "description": "生成された開発ドキュメントを基にソースコードを自動生成すること",
+      "id": "REQ-003",
+      "category": "処理",
+      "user": "開発部門"
+    },
+    {
+      "requirement_name": "結果表示",
+      "description": "生成されたドキュメントとソースコードをユーザーに表示すること",
+      "id": "REQ-004",
+      "category": "出力",
+      "user": "新規事業企画部門 開発部門 営業部門"
+    },
+    {
+      "requirement_name": "品質チェック",
+      "description": "生成されたドキュメントとソースコードの品質を自動でチェックすること",
+      "id": "REQ-005",
+      "category": "処理",
+      "user": "開発部門"
+    },
+    {
+      "requirement_name": "段階的生成",
+      "description": "要件定義 システム設計 開発 テストの各工程のドキュメントを順次生成すること",
+      "id": "REQ-006",
+      "category": "処理",
+      "user": "新規事業企画部門 開発部門"
+    },
+    {
+      "requirement_name": "提案資料作成",
+      "description": "生成されたドキュメントを基にクライアントへの提案資料を自動作成すること",
+      "id": "REQ-007",
+      "category": "出力",
+      "user": "営業部門"
+    },
+    {
+      "requirement_name": "整合性確認",
+      "description": "各工程間のドキュメントの整合性を自動でチェックし 確保すること",
+      "id": "REQ-008",
+      "category": "処理",
+      "user": "開発部門"
+    },
+    {
+      "requirement_name": "工数見積",
+      "description": "生成されたドキュメントとソースコードを基に開発工数を自動で見積もること",
+      "id": "REQ-009",
+      "category": "処理",
+      "user": "新規事業企画部門 開発部門"
+    },
+    {
+      "requirement_name": "進捗レポート",
+      "description": "開発プロセスの進捗状況を自動で集計しレポートを生成すること",
+      "id": "REQ-010",
+      "category": "出力",
+      "user": "新規事業企画部門 開発部門 営業部門"
+    }
+  ]
+}

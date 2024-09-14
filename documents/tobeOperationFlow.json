@@ -1,0 +1,6 @@
+{
+  "key": "tobeOperationFlow",
+  "value": {
+    "mermaid": "graph TD\n    subgraph 新規事業企画部門\n    A[要件定義] --> B[GEAR.indigoに要件入力]\n    B --> C[開発ドキュメント自動生成]\n    C --> D[自動品質チェック]\n    D --> E[整合性自動確認]\n    end\n\n    subgraph 開発部門\n    E --> F[ソースコード自動生成]\n    F --> G[自動テスト実施]\n    G --> H[自動品質確認]\n    H --> I[工数自動見積]\n    end\n\n    subgraph 営業部門\n    I --> J[提案資料自動作成]\n    J --> K[クライアントへの提案]\n    end\n\n    subgraph システム全体\n    L[進捗自動レポート生成]\n    end\n\n    E --> L\n    H --> L\n    K --> L"
+  }
+}

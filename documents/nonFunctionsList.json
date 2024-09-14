@@ -1,0 +1,65 @@
+{
+  "key": "nonFunctionsList",
+  "value": [
+    {
+      "non_function_name": "応答時間",
+      "description": "ドキュメントとソースコードの生成は5分以内に完了すること",
+      "id": "NON-001",
+      "category": "性能"
+    },
+    {
+      "non_function_name": "処理能力",
+      "description": "システムは同時に10件以上の要求を処理できること",
+      "id": "NON-002",
+      "category": "性能"
+    },
+    {
+      "non_function_name": "稼働時間",
+      "description": "システムは24時間365日利用可能であること",
+      "id": "NON-003",
+      "category": "可用性"
+    },
+    {
+      "non_function_name": "バックアップ",
+      "description": "データは1日1回自動でバックアップされること",
+      "id": "NON-004",
+      "category": "可用性"
+    },
+    {
+      "non_function_name": "認証",
+      "description": "ユーザー認証には多要素認証を採用すること",
+      "id": "NON-005",
+      "category": "セキュリティ"
+    },
+    {
+      "non_function_name": "暗号化",
+      "description": "保存されるデータは全て暗号化されること",
+      "id": "NON-006",
+      "category": "セキュリティ"
+    },
+    {
+      "non_function_name": "モジュール性",
+      "description": "システムは高いモジュール性を持ち 容易に機能追加や変更ができること",
+      "id": "NON-007",
+      "category": "保守性"
+    },
+    {
+      "non_function_name": "スケーラビリティ",
+      "description": "ユーザー数や処理量の増加に応じて容易にシステムリソースを拡張できること",
+      "id": "NON-008",
+      "category": "拡張性"
+    },
+    {
+      "non_function_name": "ユーザーインターフェース",
+      "description": "直感的で使いやすいインターフェースを提供すること",
+      "id": "NON-009",
+      "category": "使用性"
+    },
+    {
+      "non_function_name": "ファイル形式",
+      "description": "一般的なテキストファイル形式とPDF形式に対応すること",
+      "id": "NON-010",
+      "category": "互換性"
+    }
+  ]
+}
